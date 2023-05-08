@@ -7,23 +7,14 @@
     font-style: normal;
 }
 
-html {
-    font-size: 62.5%;
-}
-
-body {
-    font-size: 1.6rem;
-}
 
 
 header {
-    padding: 20px 0;
-    margin-bottom: 32px;
+    background: #226ED8;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #226ED8;
-    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.3);
+    
 }
 
 header .container{
@@ -37,20 +28,16 @@ header .container{
     font-size: 30px;
 }
 
-header img, .LogoUnect {
-    width: 23.28px;
-    height: 40px;
-}
-
-.LogoUnect .darkmodeazul {
-    display: none;
-}
-
 header h1 {
+    color: #FAFAFA;
     font-weight: 700;
     font-size: 30px;
-    line-height: 45px;
-    color: #FAFAFA;
+
+}
+
+img, .LogoUnect {
+    width: 23.28px;
+    height: 40px;
 }
 /*================================================*/
 input[type=checkbox]{
@@ -98,31 +85,23 @@ label:active:after {
     width: 45px;
 }
 
-
-#moon {
-    display: none;
-    color: #222222;
-}
-
-/*=================================*/
+/*==========================================*/
 main {
     display: flex;
     justify-content: center;
     background: #FFFFFF;
-    color: #141414;
+    color: black;
 }
 
 .nav{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 90%;
-    max-width: 960px;
-    margin-bottom: 32px;
+    width: 90%;    
 }
 
 .frase {
-    margin-bottom: 32px;
+    margin-bottom: 50px;
 }
 
 #apresente-frase-btn {
@@ -136,14 +115,6 @@ main {
     border: none;
 }
 
-#apresente-frase-btn h2 {
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 24px;
-    color: #FFFFFF;
-    text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
-}
-
 .frase .container{
     max-width: 620px;
     padding: 16px;
@@ -153,29 +124,26 @@ main {
     border-radius: 20px;
 }
 
-#close-frase-btn {
-    display: none;
-}
 
 .frase .circle {
     width: 44px;
     height: 44px;
-    margin-right: 8px;
+    margin-right: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
     background: #FFFCEE;
-    border-radius: 100px;
+    border-radius: 80px;
 }
 
 .frase .circle span{
-    width: 34px;
-    height: 34px;
+    width: 33px;
+    height: 33px;
     display: flex;
     justify-content: center;
     align-items: center;
     background: #FFF5C0;
-    border-radius: 100px;
+    border-radius: 80px;
 }
 
 .frase .circle i {
@@ -370,69 +338,9 @@ li h3 {
     display: flex;
 }
 
-.visible #visible-btn {
-    display: none;
-}
 
-li .status {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    margin: 10px;
-    width: 46px;
-    display: flex;
-    justify-content: space-between;
-}
 
-#back-btn {
-    width: 20px;
-    height: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #FFFFFF;
-    border: 1px solid #226ED8;
-    border-radius: 20px;
-    cursor: pointer;
-}
 
-#back-btn i {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 16px;
-    color: #226ED8;
-}
-
-#advance-btn {
-    width: 20px;
-    height: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #226ED8;
-    border-radius: 20px;
-    border: none;
-    cursor: pointer;
-}
-
-#advance-btn i {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 16px; 
-    color: #FFFFFF;
-}
-
-.completed {
-    text-decoration: line-through;
-}
-
-.primeira #back-btn {
-    display: none;
-}
-
-.primeira .status {
-    width: 20px;
-}
 
 footer {
     position: fixed;
@@ -449,6 +357,11 @@ footer {
     line-height: 21px;
 }
 
+footer a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
 footer .container {
     padding: 15px 0;
     width: 90%;
@@ -459,79 +372,10 @@ footer .container {
     flex-wrap: wrap;
 }
 
-footer a {
-    color: #FFFFFF;
-    text-decoration: none;
-}
-
 footer .amor {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.novaJan {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    background: rgba(20, 20, 20, 0.4);
-    z-index: 999;
-}
-
-.novaJan.apresente {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.novaJan .container {
-    padding: 30px 50px 40px 50px;
-    width: 474px;
-    height: 421px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: #FFFFFF;
-    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.25);
-    border-radius: 20px;
-    position: relative;
-}
-
-.novaJan h2 {
-    width: 106px;
-    color: #3867D6;
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 30px;
-    
-}
-
-.novaJan hr {
-    padding: 3px;
-    width: 121px;
-    background: #3867D6;
-    border: none;
-    border-radius: 10px;
-}
-
-form {
-    color: #141414;
-}
-
-.novaJan p {
-    margin-bottom: 6px;
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 12px;
-    line-height: 18px;
 }
 
 input[type="text"], textarea {
@@ -545,54 +389,6 @@ input[type="text"], textarea {
     height: auto;
 }
 
-textarea {
-    min-height: 90px;
-    min-width: 374px;
-    max-height: 90px;
-    max-width: 374px;
-}
-
-#new-task-btn {
-    margin-top: 20px;
-    padding: 10px 0;
-    width: 394px;
-    background: linear-gradient(90.35deg, #4890F5 0%, #226ED8 99.7%);
-    border-radius: 20px;
-    color: #FFFFFF;
-    border: none;
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 21px;
-    cursor: pointer;
-}
-
-.close {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    margin: 10px;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid #3867D6;
-    border-radius: 20px;
-    background: none;
-    cursor: pointer;
-}
-
-.close i {
-    width: 14px;
-    height: 14px;
-    color: #3867D6;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 14px;
-}
 
 #favorite{
     color: #FFAFAF;
@@ -613,10 +409,7 @@ textarea {
     color: #226ED8;
 }
 
-#close{
-    color: #226ED8;
 
-}
 
 /*==============================================================================*/
 
