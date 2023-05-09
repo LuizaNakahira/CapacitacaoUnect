@@ -47,3 +47,69 @@ window.onload = function() {
   
     toggleSwitch.addEventListener('click', switchTheme, false);
   }
+
+  /*=========================================================================================*/
+
+  const adicionar = document.querySelector("#adicionar");
+  const formularioContainer = document.querySelector(".alinhamento-to-do");
+  const lista = document.querySelector(".primeira");
+  
+  adicionar.addEventListener("click", function() {
+  
+    const formulario = document.createElement("form");
+    formulario.id = "formulario";
+  
+    const tituloFormulario = document.createElement("h2");
+    tituloFormulario.innerHTML = '<span class="material-icons" id="close">close</span> Nova Task';
+    formulario.appendChild(tituloFormulario);
+  
+    const macaNome = document.createElement("maca");
+    macaNome.for = "maca";
+    macaNome.textContent = "Título *";
+    formulario.appendChild(macaNome);
+  
+    const campoNome = document.createElement("input");
+    campoNome.type = "text";
+    campoNome.id = "nome";
+    campoNome.placeholder = "Nome";
+    formulario.appendChild(campoNome);
+  
+    const bananaDescricao = document.createElement("banana");
+    bananaDescricao.for = "banana";
+    bananaDescricao.textContent = "Descriçao";
+    formulario.appendChild(bananaDescricao);
+  
+    const campoDescricao = document.createElement("textarea");
+    campoDescricao.id = "descricao";
+    campoDescricao.placeholder = "Descrição";
+    formulario.appendChild(campoDescricao);
+  
+    const botaoSalvar = document.createElement("button");
+    botaoSalvar.type = "submit";
+    botaoSalvar.textContent = "Criar Task";
+    formulario.appendChild(botaoSalvar);
+  
+    const closeIcon = formulario.querySelector("#close");
+    closeIcon.addEventListener("click", function() {
+      formulario.style.display = "none";
+    });
+  
+    formulario.addEventListener("submit", function(event) {
+      event.preventDefault();
+  
+      const novoItem = document.createElement("li");
+      const nome = campoNome.value;
+      const descricao = campoDescricao.value;
+      novoItem.textContent = `${nome} - ${descricao}`;
+      lista.appendChild(novoItem);
+  
+      campoNome.value = "";
+      campoDescricao.value = "";
+  
+      formulario.style.display = "none";
+    });
+  
+    formularioContainer.appendChild(formulario);
+  
+    formulario.style.display = "block";
+  });
