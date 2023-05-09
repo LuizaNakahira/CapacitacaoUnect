@@ -4,94 +4,60 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>uTask 3.0</title>
+    <title>uTak 3.0</title>
+    <link href="style.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="styles2.css">
-    <script src="scripts.js" defer></script>
 </head>
 <body>
+
     <header>
-        <div class="container">
-            <div class="LogoUnect">
-                <img class="branco" src="image 1.png" alt="LogoUnect_Branca">
-            </div>
-            <h1>uTask 3.0</h1> 
-            <div class="toggle">
+        <div class="topo">
+            <img class="LogoUnect" src="ImagemLight.png" >
+            <h1>uTask 3.0</h1>
+            <div class="toggle">                
                 <input id="switch" type="checkbox" name="theme">
-                <label for="switch">                    
-                    <span class="material-icons" id="light_mode">light_mode</span>
-                    <span class="material-icons" id="dark_mode">dark_mode</span>
-                </label>
+                <label for="switch">Dark Mode</label>
             </div>   
-        </div>  
+        </div>
     </header>
+    
+    <nav>
+        <div class="FraseDoDia">
+                <img  class="lampada" src="Ícone (1).png">
+                <p class="frase">Frase do dia</p>             
+        </div>
+    </nav>
+
     <main>
-        <section class="nav">
-            <div class="frase">
-                <button id="apresente-frase-btn">
-                    <i class="circle">
-                        <span>
-                            <span class="material-icons" id="tips_and_updates">tips_and_updates</span>
-                        </span>
-                    </i>
-                    <h2>Frase do dia</h2>
-                </button>
-                <div class="nav2">
-                    <div class="container">
-                        <i class="circle">
-                            <span>
-                                <span class="material-icons" id="tips_and_updates">tips_and_updates</span>
-                            </span>
-                        </i>
-                        <div class="text">
-                            <h5>Frase do dia</h5>
-                            
-                        </div>                       
-                    </div>
-                </div>
-            </div>
-            <div class="to-do">
-                <div>
-                    <div class="header">
-                        <h2>A Fazer</h2>
-                        <button id="add-task-btn">
-                            <span class="material-icons" id="add">add</span>
-                        </button>
-                    </div>
+        <div class="to-do">
+            <div class="alinhamento-to-do">
+                <div class="colum1">
+                    <h2>A fazer<span class="material-icons" id="adicionar">add</span></h2>
                     <ul class="primeira"></ul>
                 </div>
-                <div class="em andamento">
-                    <h2 class="header">Em andamento</h2>
-                    <ul class="segunda"></ul>
+                <div class="colum2">
+                    <h2>Em andamento</h2>
+                    <ul class="segundo"></ul>
                 </div>
-                <div>
-                    <h2 class="header">Feito</h2>
-                    <ul class="terceira"></ul>
+                <div class="colum3">
+                    <h2>Feito</h2>
+                    <ul class="terceiro"></ul>
                 </div>
             </div>
-        </section>    
-    </main>
-    <div class="novaJan">
-        <div class="container">            
-            <form>
-                
-            </form>            
         </div>
-    </div>
+    </main>
+
     <footer>
-        <div class="container">
-            <p>© Processo de Trainees<strong>Unect Jr.</strong></a> 2023.1</p>
-            <div class="amor">
-                <p>Feito com</p>
-                <span class="material-icons" id="favorite">favorite</span>
-                <p>por <strong>Luiza Nakahira</strong></p>
+        <div class="rodape">
+            <p class="baixo1">© Processo de Trainees<strong> Unect Jr.</strong> 2023.1</p>
+            <div class="rodape2">
+                <p class="baixo2">Feito com</p><span class="material-icons" id="favorite">favorite</span><p class="baixo2">por <strong>Luiza Nakahira</strong></p>
             </div>
         </div>
     </footer>
+<script src="script.js"></script>
 </body>
-
 </html>
-
