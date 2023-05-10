@@ -52,17 +52,45 @@ label {
     margin-top: 18px;
     position: relative;
 }
-/*
-<span class="material-icons" id="light_mode">light_mode</span>
 
-
-#light_mode{
+.lampada{
     color: #FBB910;
-    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
     position: absolute;
-    z-index: 3;
+    left: -3px;
+    top: -4px;
 }
-*/
+
+.circulo_amarelo{
+    width: 34px;
+    height: 34px;
+    background-color: #FFF5C0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    position: relative;
+}
+
+.circulo_rosinha{
+    width: 44px;
+    height: 44px;
+    background-color: #FFFCEE;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    margin-top: 10px;
+    margin-left: 10px;
+    float: left;
+    position: relative;
+}
+
 label::after{
     content: '';
     position: absolute;
@@ -393,3 +421,14 @@ ul.dark-mode{
     color: #FAFAFA;
 }
 
+.circulo_rosinha.dark-mode{
+    background-color: #515151;
+}
+
+.circulo_amarelo.dark-mode{
+    background-color: #3D3D3D;
+}
+
+.lampada.dark-mode{
+    color: #FFFFFF;
+}
