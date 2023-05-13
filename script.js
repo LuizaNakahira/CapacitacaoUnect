@@ -119,14 +119,15 @@ adicionar.addEventListener("click", function() {
       novoItem.classList.add("primeira-item");
       novoItem.innerHTML =
         '<span class="material-icons" id="more_vert">more_vert</span>' +
-        '<div class="blue_li_circle"><span class="material-icons" id="navigate_next">navigate_next</span></div>' ;
-
+        '<div class="blue_li_circle"><span class="material-icons" id="navigate_next">navigate_next</span></div>';
+        
         if (novoItem.parentNode === listaPrimeira) {
-          novoItem.innerHTML += `${nome} - ${descricao}`;
+          novoItem.innerHTML += `<strong>${nome}</strong> - ${descricao}`;
         } else {
-          novoItem.innerHTML += `${nome} - ${descricao}` +
+          novoItem.innerHTML += `<strong>${nome}</strong> - ${descricao}` +
             '<div class="blue_li_circle2"><span class="material-icons" id="navigate_before">navigate_before</span></div>';
         }
+
 
       const navigateNextIcon = novoItem.querySelector("#navigate_next");
       navigateNextIcon.addEventListener("click", function() {
