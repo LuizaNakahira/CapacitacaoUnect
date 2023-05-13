@@ -31,6 +31,13 @@ header {
     margin-left: 200px;
   }
 
+  #light_mode{
+    color: #FBB910;
+    height: 30px;
+    width: 30px;
+    margin-right: 5px; 
+  }
+
   input[type=checkbox]{
     height: 0;
     width: 0;
@@ -197,6 +204,20 @@ ul {
     flex-direction: column;
 }
 
+.scrollable-ul{
+    max-height: 500px; 
+    overflow-x: auto;
+}
+
+.scrollable-ul::-webkit-scrollbar {
+    width: 6px;
+}
+
+.scrollable-ul::-webkit-scrollbar-thumb {
+    background-color: #C4C4C4;
+}
+
+
 li {
     background-color: #FFFFFF;
     padding: 10px;
@@ -207,6 +228,7 @@ li {
     text-align: center;
     margin-top: 10px;
     margin-left: 10px;
+
 }
 
 .to-do h2 {
@@ -275,7 +297,7 @@ li {
     background-color: #1857A3;
 }
 
-  maca, banana {
+  name, desc {
     font-weight: 600;
     margin-bottom: 8px;
     font-size: 13px;
@@ -298,6 +320,62 @@ li {
     padding: 1.5px;
 }
 
+#more_vert{
+    width: 16px;
+    height: 16px;
+    font-weight: 400;
+    font-size: 16px;
+    float: right;
+    margin-top: 5px;
+}
+
+#navigate_next{
+    font-weight: 400;
+    font-size: 16px;
+    color : #FFFFFF;
+    align-items: center;
+    align-content: center;
+}
+
+.blue_li_circle{
+    background: #226ED8;
+    border-radius: 20px;
+    width: 17px;
+    height: 17px;
+    float: right;
+    margin-top: 49px;
+    margin-right: -10px;
+    display: flex;
+    justify-content: center;
+}
+
+.riscado {
+    text-decoration: line-through;
+  }
+
+  #navigate_before{
+    font-weight: 400;
+    font-size: 16px;
+    color : #FFFFFF;
+    align-items: center;
+    align-content: center;
+}
+
+.blue_li_circle2{
+    background: #226ED8;
+    border-radius: 20px;
+    width: 17px;
+    height: 17px;
+    float: right;
+    margin-top: 49px;
+    margin-right: 7px;
+    display: flex;
+    justify-content: center;
+}
+
+.primeira .blue_li_circle2 {
+    display: none;
+  }
 /*===========================================================*/
 
 footer{
@@ -377,6 +455,13 @@ footer{
     }
 }
 
+@media screen and (max-width: 768px) {
+    .colum1, .colum2, .colum3 {
+        width: 100%;
+    }
+}
+
+
 /*============================================================*/
 
 header.dark-mode{
@@ -432,3 +517,10 @@ ul.dark-mode{
 .lampada.dark-mode{
     color: #FFFFFF;
 }
+
+.li.dark-mode{
+    background-color: #3D3D3D;
+}
+
+/*===============================================*/
+

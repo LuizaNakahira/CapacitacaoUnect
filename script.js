@@ -1,4 +1,4 @@
-window.onload = function() {
+window.onload = function () {
   const toggleSwitch = document.querySelector('#switch');
   const footer = document.querySelector('footer');
   const header = document.querySelector('header');
@@ -13,7 +13,8 @@ window.onload = function() {
   const circulo_rosinha = document.querySelector('.circulo_rosinha');
   const circulo_amarelo = document.querySelector('.circulo_amarelo');
   const lampada = document.querySelector('.lampada')
-  
+  const li = document.querySelectorAll('li');
+
   function switchTheme(event) {
     if (event.target.checked) {
       body.classList.add('dark-mode');
@@ -21,10 +22,10 @@ window.onload = function() {
       footer.classList.add('dark-mode');
       h1.classList.add('dark-mode');
       label.classList.add('dark-mode');
-      ul.forEach(function(ul) {
-          ul.classList.add('dark-mode');
-        });
-      h2.forEach(function(h2) {
+      ul.forEach(function (ul) {
+        ul.classList.add('dark-mode');
+      });
+      h2.forEach(function (h2) {
         h2.classList.add('dark-mode');
       });
       FraseDoDia.classList.add('dark-mode');
@@ -33,6 +34,7 @@ window.onload = function() {
       circulo_rosinha.classList.add('dark-mode');
       circulo_amarelo.classList.add('dark-mode');
       lampada.classList.add('dark-mode');
+      li.classList.add('dark-mode');
 
     } else {
       body.classList.remove('dark-mode');
@@ -40,19 +42,19 @@ window.onload = function() {
       footer.classList.remove('dark-mode');
       h1.classList.remove('dark-mode');
       label.classList.remove('dark-mode');
-      ul.forEach(function(element) {
-          element.classList.remove('dark-mode');
-        });
-      h2.forEach(function(element) {
+      ul.forEach(function (element) {
         element.classList.remove('dark-mode');
       });
-      FraseDoDia.classList.remove('dark-mode');        
+      h2.forEach(function (element) {
+        element.classList.remove('dark-mode');
+      });
+      FraseDoDia.classList.remove('dark-mode');
       frase.classList.remove('dark-mode');
-      logoImage.src ='ImagemLight.png' ;
+      logoImage.src = 'ImagemLight.png';
       circulo_rosinha.classList.remove('dark-mode');
       circulo_amarelo.classList.remove('dark-mode');
       lampada.classList.remove('dark-mode');
-
+      li.classList.remove('dark-mode');
     }
   }
 
@@ -63,10 +65,11 @@ window.onload = function() {
 
 const adicionar = document.querySelector("#adicionar");
 const formularioContainer = document.querySelector(".alinhamento-to-do");
-const lista = document.querySelector(".primeira");
+const listaPrimeira = document.querySelector(".primeira");
+const listaSegunda = document.querySelector(".segundo");
+const listaTerceira = document.querySelector(".terceiro");
 
 adicionar.addEventListener("click", function() {
-
   const formulario = document.createElement("form");
   formulario.id = "formulario";
 
@@ -74,10 +77,10 @@ adicionar.addEventListener("click", function() {
   tituloFormulario.innerHTML = '<span class="material-icons" id="close">close</span> Nova Task';
   formulario.appendChild(tituloFormulario);
 
-  const macaNome = document.createElement("maca");
-  macaNome.for = "maca";
-  macaNome.textContent = "Título *";
-  formulario.appendChild(macaNome);
+  const nameNome = document.createElement("name");
+  nameNome.for = "name";
+  nameNome.textContent = "Título *";
+  formulario.appendChild(nameNome);
 
   const campoNome = document.createElement("input");
   campoNome.type = "text";
@@ -85,10 +88,10 @@ adicionar.addEventListener("click", function() {
   campoNome.placeholder = "Nome";
   formulario.appendChild(campoNome);
 
-  const bananaDescricao = document.createElement("banana");
-  bananaDescricao.for = "banana";
-  bananaDescricao.textContent = "Descriçao";
-  formulario.appendChild(bananaDescricao);
+  const descDescricao = document.createElement("desc");
+  descDescricao.for = "desc";
+  descDescricao.textContent = "Descriçao";
+  formulario.appendChild(descDescricao);
 
   const campoDescricao = document.createElement("textarea");
   campoDescricao.id = "descricao";
@@ -108,11 +111,58 @@ adicionar.addEventListener("click", function() {
   formulario.addEventListener("submit", function(event) {
     event.preventDefault();
 
-    const novoItem = document.createElement("li");
     const nome = campoNome.value;
     const descricao = campoDescricao.value;
-    novoItem.textContent = `${nome} - ${descricao}`;
-    lista.appendChild(novoItem);
+
+    const criarItem = function() {
+      const novoItem = document.createElement("li");
+      novoItem.classList.add("primeira-item");
+      novoItem.innerHTML =
+        '<span class="material-icons" id="more_vert">more_vert</span>' +
+        '<div class="blue_li_circle"><span class="material-icons" id="navigate_next">navigate_next</span></div>' ;
+
+        if (novoItem.parentNode === listaPrimeira) {
+          novoItem.innerHTML += `${nome} - ${descricao}`;
+        } else {
+          novoItem.innerHTML += `${nome} - ${descricao}` +
+            '<div class="blue_li_circle2"><span class="material-icons" id="navigate_before">navigate_before</span></div>';
+        }
+
+      const navigateNextIcon = novoItem.querySelector("#navigate_next");
+      navigateNextIcon.addEventListener("click", function() {
+        if (novoItem.parentNode === listaPrimeira) {
+          listaPrimeira.removeChild(novoItem);
+          listaSegunda.appendChild(novoItem);
+          criarItem();
+        } else if (novoItem.parentNode === listaSegunda) {
+          listaSegunda.removeChild(novoItem);
+          listaTerceira.appendChild(novoItem);
+          novoItem.style.textDecoration = "line-through";
+          criarItem();
+        }
+      });
+
+      const navigateBeforeIcon = novoItem.querySelector("#navigate_before");
+      navigateBeforeIcon.addEventListener("click", function() {
+        if (novoItem.parentNode === listaSegunda) {
+          listaSegunda.removeChild(novoItem);
+          listaPrimeira.appendChild(novoItem);
+          criarItem();
+        } else if (novoItem.parentNode === listaTerceira) {
+          listaTerceira.removeChild(novoItem);
+          listaSegunda.appendChild(novoItem);
+          novoItem.style.textDecoration = "none";
+          criarItem();
+        }
+      });
+
+
+      return novoItem;
+    };
+
+
+    const novoItem = criarItem();
+    listaPrimeira.appendChild(novoItem);
 
     campoNome.value = "";
     campoDescricao.value = "";
@@ -124,3 +174,5 @@ adicionar.addEventListener("click", function() {
 
   formulario.style.display = "block";
 });
+
+/*===============================================================*/
