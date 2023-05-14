@@ -371,7 +371,7 @@ textarea {
     height: 17px;
     float: right;
     margin-top: 55px;
-    
+    margin-right: 8px;
     display: flex;
     justify-content: center;
 }
@@ -380,20 +380,42 @@ textarea {
     display: none;
 }
 
-.ler-descricao {
-    display: flex;
-    align-items: center;
-    margin-top: 50px;
-    font-weight: 300;
-    font-size: 14px;
-    margin-left: 10px;
-}
 
 #expand_more {
     font-weight: 400;
     font-size: 13px;
     margin-left: 5px;
 }
+
+
+.retangulo {
+    width: 71px;
+    height: 31px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+    float: right;
+    margin-right: -15px;
+    margin-top: 15px;
+}
+
+.ler-descricao {
+    display: block;
+    text-align: center;
+    font-weight: 300;
+    font-size: 14px;
+    float: left;
+    margin-top: 30px;
+    margin-left: 10px;
+}
+
+#expand_more {
+    text-align: center;
+    font-weight: 300;
+    font-size: 14px;
+
+}
+
 
 /*===========================================================*/
 
@@ -549,5 +571,7 @@ ul.dark-mode {
 .li.dark-mode {
     background-color: #3D3D3D;
 }
+
+
 
 /*===============================================*/
