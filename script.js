@@ -56,7 +56,7 @@ adicionar.addEventListener("click", function () {
         '<span class="material-icons" id="delete_outline">delete_outline</span>' +
         '<div class="blue_li_circle"><span class="material-icons" id="navigate_next">navigate_next</span></div>';
 
-      const nomeDescricao = `<strong class="centered larger-name">${nome}</strong>  <span class="descricao">${descricao}</span>`;
+      const nomeDescricao = `<strong class="centered larger-name">${nome}</strong>`;
 
       if (novoItem.parentNode === listaPrimeira) {
         novoItem.innerHTML += nomeDescricao;
@@ -67,15 +67,26 @@ adicionar.addEventListener("click", function () {
 
       const lerDescricao = document.createElement("span");
       lerDescricao.classList.add("ler-descricao");
-      lerDescricao.innerHTML = 'Ler descrição<span class="material-icons" id="expand_more">expand_more</span>';
+      lerDescricao.innerHTML = 'Ler descrição<span class="material-icons expandir-descricao" id="expand_more">expand_more</span>';
       novoItem.appendChild(lerDescricao);
+
+      const descricaoContainer = document.createElement("div");
+      descricaoContainer.classList.add("descricao-container");
+
+      const descricaoTexto = document.createElement("span");
+      descricaoTexto.classList.add("descricao");
+      descricaoTexto.textContent = descricao;
+      descricaoContainer.appendChild(descricaoTexto);
+
+      novoItem.appendChild(descricaoContainer);
 
       const navigateNextIcon = novoItem.querySelector("#navigate_next");
       navigateNextIcon.addEventListener("click", function () {
         if (novoItem.parentNode === listaPrimeira) {
           listaPrimeira.removeChild(novoItem);
           listaSegunda.appendChild(novoItem);
-        } else if (novoItem.parentNode === listaSegunda) {
+        } else if (novoItem.parentNode === listaSegunda
+        ) {
           listaSegunda.removeChild(novoItem);
           listaTerceira.appendChild(novoItem);
           novoItem.style.textDecoration = "line-through";
@@ -95,7 +106,7 @@ adicionar.addEventListener("click", function () {
           novoItem.style.textDecoration = "none";
         }
       });
-      
+
       const expandMoreIcon = novoItem.querySelector("#expand_more");
       expandMoreIcon.classList.add("expandir-descricao");
 
@@ -106,11 +117,19 @@ adicionar.addEventListener("click", function () {
         if (descricaoBotao.style.display === "none") {
           descricaoBotao.style.display = "block";
           expandMoreIcon.style.display = "none";
+          novoItem.style.height = "auto"; // Define a altura para "auto" ao expandir
         } else {
           descricaoBotao.style.display = "none";
           expandMoreIcon.style.display = "block";
+          novoItem.style.height = "3.6rem"; // Define a altura inicial desejada ao recolher
         }
       };
+
+      const descricaoWrapper = document.createElement("div");
+      descricaoWrapper.classList.add("descricao-wrapper");
+      descricaoWrapper.appendChild(descricaoBotao);
+      descricaoWrapper.appendChild(descricaoTexto);
+      novoItem.appendChild(descricaoWrapper);
 
       expandMoreIcon.addEventListener("click", exibirOcultarDescricao);
 

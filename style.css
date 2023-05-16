@@ -376,7 +376,7 @@ textarea {
     margin-right: 8px;
     display: flex;
     justify-content: center;
-    border: 2px solid  #226ED8;
+    border: 2px solid #226ED8;
 }
 
 .primeira .blue_li_circle2 {
@@ -387,23 +387,12 @@ textarea {
 #expand_more {
     font-weight: 400;
     font-size: 13px;
-    margin-left: 5px;
-}
-
-
-.retangulo {
-    width: 71px;
-    height: 31px;
-    background: #FFFFFF;
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 4px;
-    float: right;
-    margin-right: -15px;
-    margin-top: 15px;
+    
 }
 
 .ler-descricao {
-    display: block;
+    display: inline-flex;
+    align-items: center;
     text-align: center;
     font-weight: 300;
     font-size: 14px;
@@ -412,15 +401,45 @@ textarea {
     margin-left: 10px;
 }
 
+.ler-descricao #expand_more {
+    margin-left: 5px;
+}
+
 .centered {
     display: flex;
     justify-content: center;
+}
+
+.larger-name {
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.expandir-descricao {
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .descricao-container {
+    display: none;
+    margin-top: 10px;
+  }
+  
+  .descricao {
+    display: block;
+    margin-top: 5px;
   }
 
-  .larger-name {
-    font-size: 18px;
-    font-weight: bold;
+  .primeira-item {
+    overflow: hidden;
+    transition: height 0.3s ease;
+    height: 70px; /* Defina a altura inicial desejada para o li */
   }
+  .primeira-item.expandido {
+    max-height: none;
+  }
+
+
 /*===========================================================*/
 
 footer {
