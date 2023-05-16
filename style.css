@@ -324,13 +324,14 @@ textarea {
     padding: 1.5px;
 }
 
-#more_vert {
+#delete_outline {
     width: 16px;
     height: 16px;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 18px;
     float: right;
     margin-top: 5px;
+    color: #DF0000;
 }
 
 #navigate_next {
@@ -407,21 +408,19 @@ textarea {
     font-weight: 300;
     font-size: 14px;
     float: left;
-    margin-top: 30px;
+    margin-top: 20px;
     margin-left: 10px;
 }
-
-
-.nome-descricao {
-    text-align: center;
-}
-
 
 .centered {
     display: flex;
     justify-content: center;
   }
 
+  .larger-name {
+    font-size: 18px;
+    font-weight: bold;
+  }
 /*===========================================================*/
 
 footer {

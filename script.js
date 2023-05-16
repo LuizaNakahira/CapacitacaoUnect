@@ -53,10 +53,10 @@ adicionar.addEventListener("click", function () {
       const novoItem = document.createElement("li");
       novoItem.classList.add("primeira-item");
       novoItem.innerHTML =
-        '<span class="material-icons" id="more_vert">more_vert</span>' +
+        '<span class="material-icons" id="delete_outline">delete_outline</span>' +
         '<div class="blue_li_circle"><span class="material-icons" id="navigate_next">navigate_next</span></div>';
 
-      const nomeDescricao = `<strong class="centered">${nome}</strong>  <span class="descricao">${descricao}</span>`;
+      const nomeDescricao = `<strong class="centered larger-name">${nome}</strong>  <span class="descricao">${descricao}</span>`;
 
       if (novoItem.parentNode === listaPrimeira) {
         novoItem.innerHTML += nomeDescricao;
@@ -84,7 +84,8 @@ adicionar.addEventListener("click", function () {
 
       const navigateBeforeIcon = novoItem.querySelector("#navigate_before");
       navigateBeforeIcon.addEventListener("click", function () {
-        if (novoItem.parentNode === listaSegunda) {
+        if (
+          novoItem.parentNode === listaSegunda) {
           listaSegunda.removeChild(novoItem);
           listaPrimeira.appendChild(novoItem);
           novoItem.style.textDecoration = "none";
@@ -94,7 +95,7 @@ adicionar.addEventListener("click", function () {
           novoItem.style.textDecoration = "none";
         }
       });
-
+      
       const expandMoreIcon = novoItem.querySelector("#expand_more");
       expandMoreIcon.classList.add("expandir-descricao");
 
@@ -113,6 +114,14 @@ adicionar.addEventListener("click", function () {
 
       expandMoreIcon.addEventListener("click", exibirOcultarDescricao);
 
+      const moreVertIcon = novoItem.querySelector("#delete_outline");
+      moreVertIcon.addEventListener("click", function () {
+        const confirmDelete = confirm("Deseja excluir esta tarefa?");
+        if (confirmDelete) {
+          novoItem.parentNode.removeChild(novoItem);
+        }
+      });
+
       return novoItem;
     };
 
@@ -130,93 +139,7 @@ adicionar.addEventListener("click", function () {
   formulario.style.display = "block";
 });
 
-function toggleDescription() {
-  const expandMoreIcon = document.querySelectorAll("#expand_more");
-  moreExpandIcons.forEach(function (icon) {
-    icon.addEventListener("click", function () {
-      const descricao = icon.parentNode.querySelector(".descricao");
-      if (descricao.style.display === "block") {
-        descricao.style.display = "none";
-      } else {
-        descricao.style.display = "block";
-      }
-    });
-  });
-}
-
-toggleDescription(); // Chamar a função para atribuir o comportamento de exibir/ocultar a descrição
-
-/*===============================================================*/
-
-window.onload = function () {
-  const toggleSwitch = document.querySelector('#switch');
-  const footer = document.querySelector('footer');
-  const header = document.querySelector('header');
-  const body = document.querySelector('body');
-  const h1 = document.querySelector('h1');
-  const h2 = document.querySelectorAll('h2');
-  const label = document.querySelector('label');
-  const ul = document.querySelectorAll('ul');
-  const FraseDoDia = document.querySelector('.FraseDoDia');
-  const frase = document.querySelector('.frase');
-  const logoImage = document.querySelector('.LogoUnect');
-  const circulo_rosinha = document.querySelector('.circulo_rosinha');
-  const circulo_amarelo = document.querySelector('.circulo_amarelo');
-  const lampada = document.querySelector('.lampada')
-  const li = document.querySelectorAll('li');
-
-
-  function switchTheme(event) {
-    if (event.target.checked) {
-      body.classList.add('dark-mode');
-      header.classList.add('dark-mode');
-      footer.classList.add('dark-mode');
-      h1.classList.add('dark-mode');
-      label.classList.add('dark-mode');
-      ul.forEach(function (ul) {
-        ul.classList.add('dark-mode');
-      });
-      h2.forEach(function (h2) {
-        h2.classList.add('dark-mode');
-      });
-      FraseDoDia.classList.add('dark-mode');
-      frase.classList.add('dark-mode');
-      logoImage.src = 'ImagemDark.png';
-      circulo_rosinha.classList.add('dark-mode');
-      circulo_amarelo.classList.add('dark-mode');
-      lampada.classList.add('dark-mode');
-      li.classList.add('dark-mode');
-
-
-    } else {
-      body.classList.remove('dark-mode');
-      header.classList.remove('dark-mode');
-      footer.classList.remove('dark-mode');
-      h1.classList.remove('dark-mode');
-      label.classList.remove('dark-mode');
-      ul.forEach(function (element) {
-        element.classList.remove('dark-mode');
-      });
-      h2.forEach(function (element) {
-        element.classList.remove('dark-mode');
-      });
-      FraseDoDia.classList.remove('dark-mode');
-      frase.classList.remove('dark-mode');
-      logoImage.src = 'ImagemLight.png';
-      circulo_rosinha.classList.remove('dark-mode');
-      circulo_amarelo.classList.remove('dark-mode');
-      lampada.classList.remove('dark-mode');
-      li.classList.remove('dark-mode');
-
-    }
-  }
-
-  toggleSwitch.addEventListener('click', switchTheme, false);
-}
-
 /*=========================================================================================*/
-
-/*===============================================================*/
 
 window.onload = function () {
   const toggleSwitch = document.querySelector('#switch');
