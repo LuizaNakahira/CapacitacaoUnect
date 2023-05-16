@@ -17,6 +17,7 @@ header {
     align-items: center;
     text-align: center;
     height: 70px;
+    width: 100%;
     box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.3);
 }
 
@@ -27,7 +28,7 @@ h1 {
 }
 
 .LogoUnect {
-    width: 25px;
+    max-width: 25px;
     height: 40px;
     margin-left: 200px;
 }
@@ -131,6 +132,7 @@ label:active:after {
     text-align: center;
     font-size: 30px;
     justify-content: space-between;
+    width: 100%;
 }
 
 
@@ -206,18 +208,6 @@ ul {
     flex-direction: column;
 }
 
-.scrollable-ul {
-    max-height: 500px;
-    overflow-x: auto;
-}
-
-.scrollable-ul::-webkit-scrollbar {
-    width: 6px;
-}
-
-.scrollable-ul::-webkit-scrollbar-thumb {
-    background-color: #C4C4C4;
-}
 
 
 li {
@@ -387,14 +377,14 @@ textarea {
 #expand_more {
     font-weight: 400;
     font-size: 13px;
-    
+
 }
 
 .ler-descricao {
     display: inline-flex;
     align-items: center;
     text-align: center;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 14px;
     float: left;
     margin-top: 20px;
@@ -418,27 +408,45 @@ textarea {
 .expandir-descricao {
     display: inline-block;
     cursor: pointer;
-  }
-  
-  .descricao-container {
+}
+
+.descricao-container {
     display: none;
     margin-top: 10px;
-  }
-  
-  .descricao {
-    display: block;
-    margin-top: 5px;
-  }
+}
 
-  .primeira-item {
+.descricao {
+    display: block;
+    margin-top: 50px;
+    margin-left: 15px;
+    text-align: left;
+    font-weight: 400;
+}
+
+.primeira-item {
     overflow: hidden;
     transition: height 0.3s ease;
-    height: 70px; /* Defina a altura inicial desejada para o li */
-  }
-  .primeira-item.expandido {
-    max-height: none;
-  }
+    height: 70px;
+}
 
+.primeira-item.expandido {
+    max-height: none;
+}
+
+#expand_less {
+    font-weight: 400;
+    font-size: 13px;
+
+}
+
+#expand_less {
+    color: #002D6C;
+}
+
+.esconder-descricao {
+    color: #002D6C;
+    font-weight: 400;
+}
 
 /*===========================================================*/
 
@@ -486,53 +494,6 @@ footer {
 
 }
 
-/*===================================================================================*/
-
-
-@media (max-width: 767px) {
-
-    .colum1,
-    .colum2,
-    .colum3 {
-        width: 100%;
-    }
-}
-
-
-@media (min-width: 768px) and (max-width: 1023px) {
-
-    .colum1,
-    .colum2,
-    .colum3 {
-        width: 33.33%;
-    }
-}
-
-
-@media (min-width: 1024px) {
-
-    .colum1 {
-        width: 33.33%;
-    }
-
-    .colum2 {
-        width: 33.33%;
-        margin: 0 20px;
-    }
-
-    .colum3 {
-        width: 33.33%;
-    }
-}
-
-@media screen and (max-width: 768px) {
-
-    .colum1,
-    .colum2,
-    .colum3 {
-        width: 100%;
-    }
-}
 
 
 /*============================================================*/
@@ -598,3 +559,50 @@ ul.dark-mode {
 
 
 /*===============================================*/
+
+
+@media (max-width: 600px) {
+
+    header {
+        width: 100%;
+    }
+
+    .topo {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .LogoUnect {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .toggle {
+        margin-top: 10px;
+        margin-right: 0;
+    }
+
+    .FraseDoDia {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .frase {
+        font-size: 16px;
+    }
+
+    .colum1,
+    .colum2,
+    .colum3 {
+        width: 100%;
+    }
+
+    .carousel-wrapper {
+        overflow-x: scroll;
+    }
+}

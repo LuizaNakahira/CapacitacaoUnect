@@ -160,6 +160,9 @@ adicionar.addEventListener("click", function () {
 
 /*=========================================================================================*/
 
+
+/*=========================================================================================*/
+
 window.onload = function () {
   const toggleSwitch = document.querySelector('#switch');
   const footer = document.querySelector('footer');
