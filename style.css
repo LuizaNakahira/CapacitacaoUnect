@@ -4,19 +4,24 @@
     list-style: none;
     font-family: 'Poppins';
     font-style: normal;
+    box-sizing: border-box;
 }
 
 body {
     background-color: #E5E5E5;
+    justify-content: center;
 }
 
+.swiper{
+    height: 500px;
+}
 
 header {
     background: #226ED8;
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 70px;
+    height:  70px;
     width: 100%;
     box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.3);
 }
@@ -174,6 +179,7 @@ label:active:after {
 .alinhamento-to-do {
     display: flex;
     justify-content: space-between;
+    
 }
 
 .colum1,
@@ -189,14 +195,15 @@ label:active:after {
     color: #226ED8;
     width: 30px;
     height: 30px;
+    float: right;
+    margin-top: -32px;
+    font-weight: 400;
+    border: 2px solid #226ED8;
+    border-radius: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid #226ED8;
-    background: none;
-    border-radius: 40px;
-    float: right;
-    margin-top: -35px;
+ 
 }
 
 ul {
@@ -216,7 +223,7 @@ li {
     margin-bottom: 10px;
     border-radius: 10px;
     width: 253px;
-    height: 74px;
+    height: px;
     text-align: center;
     margin-top: 10px;
     margin-left: 10px;
@@ -338,7 +345,7 @@ textarea {
     width: 17px;
     height: 17px;
     float: right;
-    margin-top: 55px;
+    margin-top: 45px;
     margin-right: -10px;
     display: flex;
     justify-content: center;
@@ -362,7 +369,7 @@ textarea {
     width: 17px;
     height: 17px;
     float: right;
-    margin-top: 55px;
+    margin-top: 4px;
     margin-right: 8px;
     display: flex;
     justify-content: center;
@@ -426,7 +433,7 @@ textarea {
 .primeira-item {
     overflow: hidden;
     transition: height 0.3s ease;
-    height: 70px;
+    height: 80px;
 }
 
 .primeira-item.expandido {
@@ -605,4 +612,9 @@ ul.dark-mode {
     .carousel-wrapper {
         overflow-x: scroll;
     }
+
+    .to-do{
+        height: 270px;
+    }
 }
+
