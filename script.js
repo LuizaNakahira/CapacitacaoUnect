@@ -131,8 +131,8 @@ adicionar.addEventListener("click", function () {
 });
 
 function toggleDescription() {
-  const moreVertIcons = document.querySelectorAll("#more_vert");
-  moreVertIcons.forEach(function (icon) {
+  const expandMoreIcon = document.querySelectorAll("#expand_more");
+  moreExpandIcons.forEach(function (icon) {
     icon.addEventListener("click", function () {
       const descricao = icon.parentNode.querySelector(".descricao");
       if (descricao.style.display === "block") {
