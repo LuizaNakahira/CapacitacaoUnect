@@ -416,6 +416,15 @@ textarea {
 
 }
 
+.nome-descricao {
+    text-align: center;
+}
+
+
+.centered {
+    display: flex;
+    justify-content: center;
+  }
 
 /*===========================================================*/
 
