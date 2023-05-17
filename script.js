@@ -71,6 +71,7 @@ adicionar.addEventListener("click", function () {
       lerDescricao.innerHTML = 'Ler descrição<span class="material-icons expandir-descricao" id="expand_more">expand_more</span>';
       novoItem.appendChild(lerDescricao);
 
+
       const descricaoContainer = document.createElement("div");
       descricaoContainer.classList.add("descricao-container");
 
@@ -121,20 +122,9 @@ adicionar.addEventListener("click", function () {
           descricaoBotao.style.display = "none";
           expandMoreIcon.style.display = "block";
           novoItem.style.height = "3.6rem";
+          expandLessIcon.style.display = "none";
         }
       };
-
-
-      const expandirDescricaoIcon = novoItem.querySelector(".expandir-descricao");
-      expandirDescricaoIcon.addEventListener("click", function () {
-        const icone = expandirDescricaoIcon.querySelector(".material-icons");
-        if (icone.textContent === "expand_more") {
-          icone.textContent = "expand_less";
-        } else {
-          icone.textContent = "expand_more";
-        }
-      });
-
 
       const descricaoWrapper = document.createElement("div");
       descricaoWrapper.classList.add("descricao-wrapper");
@@ -146,16 +136,24 @@ adicionar.addEventListener("click", function () {
 
       const expandirDescricao = novoItem.querySelector(".expandir-descricao");
       expandirDescricao.addEventListener("click", function () {
+        const expandLessIcon = document.createElement("span");
+        expandLessIcon.classList.add("material-icons");
+        expandLessIcon.classList.add("expandir-descricao");
+        expandLessIcon.textContent = "expand_less";
+        expandLessIcon.style.display = "none";
+        expandirDescricao.parentNode.appendChild(expandLessIcon);
+
         const textoExpandir = expandirDescricao.textContent;
         if (textoExpandir === "expand_more") {
           expandirDescricao.textContent = "expand_less";
-          expandirDescricao.parentNode.firstChild.textContent = 'Esconder descrição';
+          expandirDescricao.parentNode.firstChild.textContent = "Esconder descrição";
+          expandLessIcon.style.display = "inline-block";
         } else {
           expandirDescricao.textContent = "expand_more";
           expandirDescricao.parentNode.firstChild.textContent = "Ler descrição";
         }
-      });
 
+      });
       const moreVertIcon = novoItem.querySelector("#delete_outline");
       moreVertIcon.addEventListener("click", function () {
         const confirmDelete = confirm("Deseja excluir esta tarefa?");
@@ -180,6 +178,8 @@ adicionar.addEventListener("click", function () {
 
   formulario.style.display = "block";
 });
+
+
 /*=========================================================================================*/
 
 var swiper = new Swiper(".swiper", {

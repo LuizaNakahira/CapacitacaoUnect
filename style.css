@@ -455,13 +455,20 @@ textarea {
   }
 
 
-  .expandir-descricao .material-icons::after {
-    content: "expand_more";
-  }
-  
-  .expandir-descricao.expanded .material-icons::after {
-    content: "expand_less";
-  }
+  .esconder-descricao {
+    display: inline-flex;
+    align-items: center;
+    text-align: center;
+    font-weight: 400;
+    font-size: 14px;
+    float: left;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.esconder-descricao #expand_less {
+    margin-left: 5px;
+}
 /*===========================================================*/
 
 footer {
