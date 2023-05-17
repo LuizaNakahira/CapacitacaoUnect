@@ -12,7 +12,7 @@ body {
     justify-content: center;
 }
 
-.swiper{
+.swiper {
     height: 500px;
 }
 
@@ -21,7 +21,7 @@ header {
     justify-content: center;
     align-items: center;
     text-align: center;
-    height:  70px;
+    height: 70px;
     width: 100%;
     box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.3);
 }
@@ -179,7 +179,7 @@ label:active:after {
 .alinhamento-to-do {
     display: flex;
     justify-content: space-between;
-    
+
 }
 
 .colum1,
@@ -203,7 +203,7 @@ label:active:after {
     display: flex;
     justify-content: center;
     align-items: center;
- 
+
 }
 
 ul {
@@ -213,6 +213,7 @@ ul {
     border-radius: 10px;
     display: flex;
     flex-direction: column;
+    overflow-y: auto;
 }
 
 
@@ -349,6 +350,7 @@ textarea {
     margin-right: -10px;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .riscado {
@@ -369,10 +371,11 @@ textarea {
     width: 17px;
     height: 17px;
     float: right;
-    margin-top: 4px;
+    margin-top: 20px;
     margin-right: 8px;
     display: flex;
     justify-content: center;
+    align-items: center;
     border: 2px solid #226ED8;
 }
 
@@ -434,10 +437,6 @@ textarea {
     overflow: hidden;
     transition: height 0.3s ease;
     height: 80px;
-}
-
-.primeira-item.expandido {
-    max-height: none;
 }
 
 #expand_less {
@@ -613,8 +612,7 @@ ul.dark-mode {
         overflow-x: scroll;
     }
 
-    .to-do{
+    .to-do {
         height: 270px;
     }
 }
-
