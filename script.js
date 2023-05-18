@@ -4,13 +4,13 @@ const listaPrimeira = document.querySelector(".primeira");
 const listaSegunda = document.querySelector(".segundo");
 const listaTerceira = document.querySelector(".terceiro");
 
-
 adicionar.addEventListener("click", function () {
   const formulario = document.createElement("form");
   formulario.id = "formulario";
 
   const tituloFormulario = document.createElement("h2");
-  tituloFormulario.innerHTML = '<span class="material-icons" id="close">close</span> Nova Task';
+  tituloFormulario.innerHTML =
+    '<span class="material-icons" id="close">close</span> Nova Task';
   formulario.appendChild(tituloFormulario);
 
   const nameNome = document.createElement("name");
@@ -26,7 +26,7 @@ adicionar.addEventListener("click", function () {
 
   const descDescricao = document.createElement("desc");
   descDescricao.for = "desc";
-  descDescricao.textContent = "Descriçao";
+  descDescricao.textContent = "Descrição";
   formulario.appendChild(descDescricao);
 
   const campoDescricao = document.createElement("textarea");
@@ -68,9 +68,9 @@ adicionar.addEventListener("click", function () {
 
       const lerDescricao = document.createElement("span");
       lerDescricao.classList.add("ler-descricao");
-      lerDescricao.innerHTML = 'Ler descrição<span class="material-icons expandir-descricao" id="expand_more">expand_more</span>';
+      lerDescricao.innerHTML =
+        'Ler descrição<span class="material-icons expandir-descricao" id="expand_more">expand_more</span>';
       novoItem.appendChild(lerDescricao);
-
 
       const descricaoContainer = document.createElement("div");
       descricaoContainer.classList.add("descricao-container");
@@ -122,7 +122,6 @@ adicionar.addEventListener("click", function () {
           descricaoBotao.style.display = "none";
           expandMoreIcon.style.display = "block";
           novoItem.style.height = "3.6rem";
-          expandLessIcon.style.display = "none";
         }
       };
 
@@ -139,21 +138,30 @@ adicionar.addEventListener("click", function () {
         const expandLessIcon = document.createElement("span");
         expandLessIcon.classList.add("material-icons");
         expandLessIcon.classList.add("expandir-descricao");
+        expandLessIcon.classList.add("expandirmenos");
         expandLessIcon.textContent = "expand_less";
         expandLessIcon.style.display = "none";
+        expandLessIcon.style.color = "#002D6C";
+        expandLessIcon.style.fontSize = "15px";
+        expandLessIcon.style.marginLeft = "5px";
         expandirDescricao.parentNode.appendChild(expandLessIcon);
+        
 
         const textoExpandir = expandirDescricao.textContent;
+        const lerDescricao = novoItem.querySelector(".ler-descricao");
+
         if (textoExpandir === "expand_more") {
           expandirDescricao.textContent = "expand_less";
-          expandirDescricao.parentNode.firstChild.textContent = "Esconder descrição";
+          lerDescricao.innerHTML = 'Esconder descrição<span class="material-icons expandir-descricao" id="expand_less">expand_less</span>';
           expandLessIcon.style.display = "inline-block";
+          lerDescricao.classList.add("esconder-descricao"); 
         } else {
           expandirDescricao.textContent = "expand_more";
-          expandirDescricao.parentNode.firstChild.textContent = "Ler descrição";
+          lerDescricao.innerHTML = 'Ler descrição<span class="material-icons expandir-descricao" id="expand_more">expand_more</span>';
+          lerDescricao.classList.remove("esconder-descricao"); 
         }
-
       });
+
       const moreVertIcon = novoItem.querySelector("#delete_outline");
       moreVertIcon.addEventListener("click", function () {
         const confirmDelete = confirm("Deseja excluir esta tarefa?");
@@ -178,8 +186,6 @@ adicionar.addEventListener("click", function () {
 
   formulario.style.display = "block";
 });
-
-
 /*=========================================================================================*/
 
 var swiper = new Swiper(".swiper", {
