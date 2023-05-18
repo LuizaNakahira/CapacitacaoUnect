@@ -384,7 +384,7 @@ textarea {
 
 #expand_more {
     font-weight: 400;
-    font-size: 13px;
+    font-size: 15px;
 
 }
 
@@ -460,9 +460,12 @@ textarea {
     font-size: 14px;
 }
 
-.icone-expand-less {
-    font-size: 100px; 
-  }
+#expand_less{
+    font-weight: 400;
+    font-size: 15px;
+    color: #002D6C;
+    margin-left: 5px;
+}
 
 /*===========================================================*/
 

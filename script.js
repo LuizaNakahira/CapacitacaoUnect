@@ -139,11 +139,7 @@ adicionar.addEventListener("click", function () {
         expandLessIcon.classList.add("material-icons");
         expandLessIcon.classList.add("expandir-descricao");
         expandLessIcon.classList.add("expandirmenos");
-        expandLessIcon.textContent = "expand_less";
-        expandLessIcon.style.display = "none";
-        expandLessIcon.style.color = "#002D6C";
-        expandLessIcon.style.fontSize = "15px";
-        expandLessIcon.style.marginLeft = "5px";
+        expandLessIcon.textContent = "expand_less";       
         expandirDescricao.parentNode.appendChild(expandLessIcon);
         
 
@@ -186,6 +182,8 @@ adicionar.addEventListener("click", function () {
 
   formulario.style.display = "block";
 });
+
+
 /*=========================================================================================*/
 
 var swiper = new Swiper(".swiper", {
