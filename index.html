@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 </head>
 
 <body>
@@ -21,7 +22,7 @@
             <h1>uTask 3.0</h1>
             <div class="toggle">
                 <input id="switch" type="checkbox" name="theme">
-                <label for="switch"><span class="material-icons" id="light_mode">light_mode</span></label>
+                <label for="switch"><span class="material_mode"> id="light_modelight</span></label-icons">
             </div>
         </div>
     </header>
@@ -36,33 +37,40 @@
     </nav>
 
     <main>
-        <div class="to-do">
-            <div class="alinhamento-to-do">
+        <div class="to-do"> 
+            <div class="alinhamento-to-do"> 
 
-                <div class="colum1">
+                <div class="colum1"> 
                     <h2>A fazer</h2>
                     <span class="material-icons" id="adicionar">add</span>
-                    <ul class="primeira">
+                    <div class="scroll-container">
+                        <ul class="primeira">
 
-                    </ul>
+                        </ul>
+                    </div>
                 </div>
-                <div class="colum2">
+                <div class="colum2"> 
                     <h2>Em andamento</h2>
-                    <ul class="segundo">
+                    <div class="scroll-container">
+                        <ul class="segundo">
 
-                    </ul>
+                        </ul>
+                    </div>
                 </div>
-                <div class="colum3">
+                <div class="colum3"> 
                     <h2>Feito</h2>
-                    <ul class="terceiro">
+                    <div class="scroll-container">
+                        <ul class="terceiro">
 
-                    </ul>
+                        </ul>
+                    </div>
                 </div>
 
             </div>
+
         </div>
     </main>
-
+    
     <footer>
         <div class="rodape">
             <p class="baixo1">© Processo de Trainees<strong> Unect Jr.</strong> 2023.1</p>
@@ -73,6 +81,7 @@
         </div>
     </footer>
 
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
 

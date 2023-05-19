@@ -12,11 +12,14 @@ body {
     justify-content: center;
 }
 
+
 .swiper {
     height: 500px;
 }
 
 header {
+    position: fixed;
+    top: 0;
     background: #226ED8;
     justify-content: center;
     align-items: center;
@@ -30,6 +33,7 @@ h1 {
     color: #FAFAFA;
     font-weight: 700;
     font-size: 30px;
+    white-space: nowrap;
 }
 
 .LogoUnect {
@@ -145,9 +149,9 @@ label:active:after {
     background-color: #FFFFFF;
     width: 500px;
     height: 125px;
-    border-radius: 30px;
+    border-radius: 15px;
     margin-left: 200px;
-    margin-top: 30px;
+    margin-top: 90px;
     position: relative;
 }
 
@@ -179,16 +183,22 @@ label:active:after {
 .alinhamento-to-do {
     display: flex;
     justify-content: space-between;
-
+    overflow-x: auto;
+    white-space: nowrap;
 }
 
 .colum1,
 .colum2,
 .colum3 {
     width: 33.33%;
-    float: left;
     padding: 10px;
     box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+    white-space: normal;
+    flex: 0 0 33.33%;
+    padding: 10px;
+
 }
 
 #adicionar {
@@ -212,6 +222,8 @@ ul {
     background: #EEEEEE;
     border-radius: 10px;
     overflow-y: auto;
+    display: inline-block;
+    white-space: nowrap;
 }
 
 
@@ -225,7 +237,7 @@ li {
     height: px;
     text-align: center;
     margin-top: 10px;
-    margin-left: 10px;
+    margin-left: 25px;
 
 
 }
@@ -460,12 +472,22 @@ textarea {
     font-size: 14px;
 }
 
-#expand_less{
+#expand_less {
     font-weight: 400;
     font-size: 15px;
     color: #002D6C;
     margin-left: 5px;
 }
+
+.descricao-wrapper.expandir {
+    height: auto;
+}
+
+.descricao-wrapper .descricao {
+    display: none;
+}
+
+
 
 /*===========================================================*/
 
@@ -587,53 +609,96 @@ ul.dark-mode {
 
 /*===============================================*/
 
+@media screen and (max-width:1019px) {
 
-@media (max-width: 600px) {
-
-    header {
+    .FraseDoDia {
+        margin-left: 60px;
+        position: fixed;
+        height: 100px;
+    }
+    .primeira,
+    .segundo,
+    .terceiro {
+        margin-top: 50px;
         width: 100%;
+        padding: 10px;
+        display: inline-block;
+        white-space: normal;
+        margin-right: 300px;
+        height: 300px;
     }
 
-    .topo {
-        flex-direction: column;
+    h2{       
+        margin-top: 200px;
+        font-size: 15px;
+    }
+
+}
+
+
+@media screen and (max-width:350px) {
+
+    header {
+        display: flex;
+        justify-content: space-between;
         align-items: center;
     }
 
-    .LogoUnect {
-        margin-left: 0;
-        margin-bottom: 10px;
+    .topo {
+        height: 20vh;
+    }
+
+    .header>* {
+        flex-grow: 1;
     }
 
     h1 {
-        font-size: 24px;
-        margin-bottom: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 10vh;
+        font-size: 30px;
+        margin-left: 40px;
     }
 
     .toggle {
-        margin-top: 10px;
-        margin-right: 0;
+        margin-left: 20px;
+        font-size: 30px;
+    }
+
+    .LogoUnect {
+        margin-left: 20px;
     }
 
     .FraseDoDia {
-        width: 100%;
-        margin-left: 0;
+        margin-top: -120px;
+        margin-left: 40px;
+        width: 275px;
+        height: 10vh;
+        background-color: #FFD569;
+
     }
 
     .frase {
-        font-size: 16px;
-    }
-
-    .colum1,
-    .colum2,
-    .colum3 {
-        width: 100%;
-    }
-
-    .carousel-wrapper {
-        overflow-x: scroll;
+        color: #FFFFFF;
+        font-weight: 600;
+        font-size: 20px;
+        margin-top: 5px;
+        margin-left: 20px;
     }
 
     .to-do {
-        height: 270px;
+        margin-top: 200px;
+        height: 300px;
+    }
+
+    h2 {
+        font-size: 15px;
+    }
+
+    .primeira,
+    .segundo,
+    .terceiro {
+    margin-right: 20px;
     }
 }
