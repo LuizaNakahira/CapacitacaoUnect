@@ -609,34 +609,8 @@ ul.dark-mode {
 
 /*===============================================*/
 
-@media screen and (max-width:1019px) {
 
-    .FraseDoDia {
-        margin-left: 60px;
-        position: fixed;
-        height: 100px;
-    }
-    .primeira,
-    .segundo,
-    .terceiro {
-        margin-top: 50px;
-        width: 100%;
-        padding: 10px;
-        display: inline-block;
-        white-space: normal;
-        margin-right: 300px;
-        height: 300px;
-    }
-
-    h2{       
-        margin-top: 200px;
-        font-size: 15px;
-    }
-
-}
-
-
-@media screen and (max-width:350px) {
+@media screen and (max-width:450px) {
 
     header {
         display: flex;
@@ -671,8 +645,11 @@ ul.dark-mode {
     }
 
     .FraseDoDia {
-        margin-top: -120px;
-        margin-left: 40px;
+        position: absolute;
+        top: 10px;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
         width: 275px;
         height: 10vh;
         background-color: #FFD569;
@@ -688,12 +665,12 @@ ul.dark-mode {
     }
 
     .to-do {
-        margin-top: 200px;
+        margin-top: 500px;
         height: 300px;
     }
 
     h2 {
-        font-size: 15px;
+        width: 500px;
     }
 
     .primeira,
